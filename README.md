@@ -5,7 +5,7 @@
 ## Explanation
 
 **#** (Delimiter)
-<span style="color:red">**E**</span> (Entrance)
+**E** (Entrance)
 **X** (Exit)
 
 ![maze1](./public/maze1.png)
