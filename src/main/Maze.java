@@ -3,9 +3,6 @@ package main;
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
-
-import javax.swing.border.EmptyBorder;
-
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
 
