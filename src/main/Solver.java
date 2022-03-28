@@ -9,10 +9,10 @@ public class Solver {
       return;
     }
 
-    MazeSolver mazeSolver;
+    Maze mazeSolver;
 
     try {
-      mazeSolver = new MazeSolver(args[0]);
+      mazeSolver = new Maze(args[0]);
       mazeSolver.solve();
     } catch (FileNotFoundException e) {
       System.err.printf("File Not Found : The provided file name %s.txt does not exist in /mazes", args[0]);

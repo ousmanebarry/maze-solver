@@ -6,11 +6,11 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
 
-public class MazeSolver {
+public class Maze {
 
   private List<List<String>> maze;
 
-  public MazeSolver(String fileName) throws FileNotFoundException {
+  public Maze(String fileName) throws FileNotFoundException {
     File file = new File("mazes/" + fileName + ".txt");
     Scanner scanner = new Scanner(file);
     maze = new ArrayList<>();
