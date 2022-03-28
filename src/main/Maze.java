@@ -3,6 +3,9 @@ package main;
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
+
+import javax.swing.border.EmptyBorder;
+
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
 
@@ -35,6 +38,16 @@ public class Maze {
     scanner.close();
   }
 
-  public void solve() {
+  public int solve() {
+    long start;
+    long end;
+
+    start = System.currentTimeMillis();
+
+    // Write solving logic here
+
+    end = System.currentTimeMillis();
+
+    return (int) (end - start);
   }
 }
