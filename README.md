@@ -14,13 +14,13 @@ If you wish to generate a random maze, here is a [website](https://thenerdshow.c
 
 ## Usage
 
-Navigate to the `src/main` folder and compile the java files with the following command :
+Navigate to the `src/main/` folder and compile the java files with the following command :
 
 ```bash
 javac *.java
 ```
 
-Navigate back to the `src` folder and run the `Solver.java` with the following command :
+Navigate back to the `src/` folder and run the `Solver.java` with the following command :
 
 ```bash
 java main.Solver maze1
