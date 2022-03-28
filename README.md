@@ -28,6 +28,8 @@ java main.Solver maze1
 
 ## Expected Behaviour
 
+TBD
+
 ## Contributing
 
 Pull requests are welcome. Feel free to fork this project and implement any other algorithm to solve these mazes in the fastest way possible. You can open a pull request [here](https://github.com/ousmanebarry/MazeSolver/pulls).
