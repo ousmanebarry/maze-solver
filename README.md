@@ -5,7 +5,9 @@
 ## Explanation
 
 **#** (Delimiter)
+
 **E** (Entrance)
+
 **X** (Exit)
 
 ![maze1](./public/maze1.png)
