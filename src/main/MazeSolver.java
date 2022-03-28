@@ -8,12 +8,31 @@ import java.io.FileNotFoundException;
 
 public class MazeSolver {
 
-  List<List<String>> maze = new ArrayList<>();
+  private List<List<String>> maze;
 
   public MazeSolver(String fileName) throws FileNotFoundException {
-    File myMazeFile = new File("mazes/" + fileName + ".txt");
-    Scanner myMazeScanner = new Scanner(myMazeFile);
-    myMazeScanner.close();
+    File file = new File("mazes/" + fileName + ".txt");
+    Scanner scanner = new Scanner(file);
+    maze = new ArrayList<>();
+    initialize(scanner);
+  }
+
+  public void initialize(Scanner scanner) {
+
+    while (scanner.hasNext()) {
+      String currentLine = scanner.nextLine();
+      String[] splitCurrentLine = currentLine.split("");
+      List<String> temp = new ArrayList<>();
+
+      for (String i : splitCurrentLine)
+        temp.add(i);
+
+      maze.add(temp);
+    }
+
+    // System.out.println(maze);
+
+    scanner.close();
   }
 
   public void solve() {
