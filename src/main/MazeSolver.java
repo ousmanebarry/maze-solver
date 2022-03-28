@@ -9,13 +9,9 @@ import java.io.FileNotFoundException;
 
 public class MazeSolver {
   public MazeSolver(String fileName) throws FileNotFoundException {
-    try {
-      File mymazeFile = new File(fileName);
-      Scanner myMazeScanner = new Scanner(mymazeFile);
-      System.out.println("We're in");
-    } catch (FileNotFoundException e) {
-      throw new FileNotFoundException("The provided file name [" + fileName + "] does not exist in /mazes");
-    }
+    File myMazeFile = new File("mazes/" + fileName + ".txt");
+    Scanner myMazeScanner = new Scanner(myMazeFile);
+    myMazeScanner.close();
   }
 
   public void solve() {
