@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 public class Solver {
   public static void main(String[] args) {
     if (args.length != 1) {
-      System.out.println("Usage : java main.Solver filename");
+      System.out.println("Usage : java main.Solver [filename]");
       return;
     }
 
