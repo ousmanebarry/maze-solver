@@ -9,10 +9,8 @@ public class Solver {
       return;
     }
 
-    Maze mazeSolver;
-
     try {
-      mazeSolver = new Maze(args[0]);
+      Maze mazeSolver = new Maze(args[0]);
       int runTime = mazeSolver.solve();
       mazeSolver.getSolvedPath();
       System.out.println("Run time : " + runTime + " ms");
