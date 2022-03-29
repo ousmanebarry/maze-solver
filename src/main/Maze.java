@@ -10,12 +10,12 @@ import java.lang.IllegalStateException;
 public class Maze {
   protected static final String ENTRANCE_STRING = "E";
   protected static final String EXIT_STRING = "X";
+  protected List<List<String>> solvedMaze;
+  protected List<List<String>> maze;
   protected int entranceRowIndex = -1;
   protected int exitRowIndex = -1;
   protected int entranceColIndex;
   protected int exitColIndex;
-  protected List<List<String>> maze;
-  protected List<List<String>> solvedMaze;
 
   public Maze(String fileName) throws FileNotFoundException, IllegalStateException {
     File file = new File("mazes/" + fileName + ".txt");
@@ -38,11 +38,11 @@ public class Maze {
       String[] arrayCurrentLine = currentLine.split("");
       List<String> listCurrentLine = new ArrayList<>();
 
-      for (String i : arrayCurrentLine) {
-        listCurrentLine.add(i);
-        if (i.equals(ENTRANCE_STRING)) {
+      for (String currentString : arrayCurrentLine) {
+        listCurrentLine.add(currentString);
+        if (currentString.equals(ENTRANCE_STRING)) {
           entranceRowIndex = counter;
-        } else if (i.equals(EXIT_STRING)) {
+        } else if (currentString.equals(EXIT_STRING)) {
           exitRowIndex = counter;
         }
         counter++;
