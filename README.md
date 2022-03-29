@@ -4,7 +4,9 @@
 
 ## Explanation
 
-**#** (Delimiter) **||** **E** (Entrance) **||** **X** (Exit)
+- **#** (Delimiter)
+- **E** (Entrance)
+- **X** (Exit)
 
 ![maze1](./public/maze1.png)
 
@@ -36,4 +38,4 @@ Pull requests are welcome. Feel free to fork this project and implement any othe
 
 ## License
 
-[MIT](/LICENSE)
+This project is licensed under the [MIT](/LICENSE) license.
