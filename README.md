@@ -16,13 +16,13 @@ If you wish to generate a random maze, here is a [website](https://thenerdshow.c
 
 ## Usage
 
-Navigate to the `src/main/` folder and compile the java files with the following command :
+Navigate to the `main` folder and compile the java files with the following command :
 
 ```bash
 javac *.java
 ```
 
-Navigate back to the `src/` folder and run the `Solver.java` with the following command :
+Navigate back to the `src` folder and run the `Solver.java` with the following command :
 
 ```bash
 java main.Solver maze1
@@ -30,7 +30,16 @@ java main.Solver maze1
 
 ## Expected Behaviour
 
-TBD
+Using the previously described algorithm, we solve the maze while keeping track of the amount of time taken. If the maze is solved, we print the solved path and the amount of milliseconds taken to solve to the standard output.
+
+```java
+long start = System.currentTimeMillis();
+// ...
+long end = System.currentTimeMillis();
+
+System.out.println(maze.getSolvedPath()); // Prints solved path
+System.out.println((int) (end - start) + " ms"); // Prints time taken to solve
+```
 
 ## Contributing
 
