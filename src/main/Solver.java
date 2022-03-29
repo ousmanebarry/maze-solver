@@ -10,7 +10,7 @@ public class Solver {
     }
 
     try {
-      Maze mazeSolver = new Maze(args[0]);
+      MazeQueue mazeSolver = new MazeQueue(args[0]);
       int runTime = mazeSolver.solve();
       mazeSolver.getSolvedPath();
       System.out.println("Run time : " + runTime + " ms");

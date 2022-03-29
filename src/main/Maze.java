@@ -5,19 +5,19 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
+import java.lang.IllegalStateException;
 
 public class Maze {
+  protected static final String ENTRANCE_STRING = "E";
+  protected static final String EXIT_STRING = "X";
+  protected int entranceRowIndex = -1;
+  protected int exitRowIndex = -1;
+  protected int entranceColIndex;
+  protected int exitColIndex;
+  protected List<List<String>> maze;
+  protected List<List<String>> solvedMaze;
 
-  private static final String ENTRANCE_STRING = "E";
-  private static final String EXIT_STRING = "X";
-  private int entranceRowIndex = -1;
-  private int exitRowIndex = -1;
-  private int entranceColIndex;
-  private int exitColIndex;
-  private List<List<String>> maze;
-  private List<List<String>> solvedMaze;
-
-  public Maze(String fileName) throws FileNotFoundException, IllegalArgumentException {
+  public Maze(String fileName) throws FileNotFoundException, IllegalStateException {
     File file = new File("mazes/" + fileName + ".txt");
     Scanner scanner = new Scanner(file);
     maze = solvedMaze = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Maze {
     exitColIndex = maze.size() - 1;
 
     if (entranceRowIndex == -1 || exitRowIndex == -1) {
-      throw new IllegalArgumentException("The maze must have an entrance and an exit");
+      throw new IllegalStateException("The maze must have an entrance (E) and an exit (X)");
     }
   }
 
@@ -53,27 +53,6 @@ public class Maze {
     }
 
     scanner.close();
-  }
-
-  public boolean canMove(char direction) {
-    return true;
-  }
-
-  public int solve() {
-    long start;
-    long end;
-
-    start = System.currentTimeMillis();
-
-    // System.out.println("Entrance : 0," + entranceRowIndex);
-    // System.out.println(maze.get(0).get(entranceRowIndex));
-    // System.out.println("Exit : " + (maze.size() - 1) + "," + exitRowIndex);
-    // System.out.println(maze.get(maze.size() - 1).get(exitRowIndex));
-    System.out.println(solvedMaze);
-
-    end = System.currentTimeMillis();
-
-    return (int) (end - start);
   }
 
   public List<List<String>> getSolvedPath() {
