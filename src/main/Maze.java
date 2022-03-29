@@ -9,11 +9,12 @@ import java.io.FileNotFoundException;
 public class Maze {
 
   private List<List<String>> maze;
+  private List<List<String>> solvedMaze;
 
   public Maze(String fileName) throws FileNotFoundException {
     File file = new File("mazes/" + fileName + ".txt");
     Scanner scanner = new Scanner(file);
-    maze = new ArrayList<>();
+    maze = solvedMaze = new ArrayList<>();
     initialize(scanner);
   }
 
@@ -21,13 +22,14 @@ public class Maze {
 
     while (scanner.hasNext()) {
       String currentLine = scanner.nextLine();
-      String[] splitCurrentLine = currentLine.split("");
-      List<String> temp = new ArrayList<>();
+      String[] arrayCurrentLine = currentLine.split("");
+      List<String> listCurrentLine = new ArrayList<>();
 
-      for (String i : splitCurrentLine)
-        temp.add(i);
+      for (String i : arrayCurrentLine)
+        listCurrentLine.add(i);
 
-      maze.add(temp);
+      maze.add(listCurrentLine);
+      solvedMaze.add(listCurrentLine);
     }
 
     // System.out.println(maze);
@@ -41,10 +43,14 @@ public class Maze {
 
     start = System.currentTimeMillis();
 
-    // Write solving logic here
+    System.out.println();
 
     end = System.currentTimeMillis();
 
     return (int) (end - start);
+  }
+
+  public void getSolvedPath() {
+    System.out.println(solvedMaze);
   }
 }
