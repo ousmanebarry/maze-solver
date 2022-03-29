@@ -48,3 +48,8 @@ Pull requests are welcome. Feel free to fork this project and implement any othe
 ## License
 
 This project is licensed under the [MIT](/LICENSE) license.
+
+## Links
+
+- [Maze-solving algorithms](https://en.wikipedia.org/wiki/Maze-solving_algorithm)
+- [Random maze generator](https://thenerdshow.com/amaze.html)
