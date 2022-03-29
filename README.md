@@ -38,7 +38,7 @@ long start = System.currentTimeMillis();
 long end = System.currentTimeMillis();
 
 System.out.println(maze.getSolvedPath()); // Prints solved path
-System.out.println((int) (end - start) + " ms"); // Prints time taken to solve
+System.out.println("Run time :" + (int) (end - start) + " ms"); // Prints time taken to solve
 ```
 
 ## Contributing
