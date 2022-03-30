@@ -79,13 +79,17 @@ public class Maze {
   public boolean canMove(String direction) {
     switch (direction) {
       case "L":
-        return playerColIndex > 0 && !maze.get(playerColIndex - 1).get(playerRowIndex).equals("#");
+        return playerColIndex - 1 > 0 && playerColIndex - 1 < maze.get(playerRowIndex).size() - 1
+            && !maze.get(playerRowIndex).get(playerColIndex - 1).equals("#");
       case "R":
-        return playerColIndex < maze.size() - 1;
+        return playerColIndex + 1 > 0 && playerColIndex + 1 < maze.get(playerRowIndex).size() - 1
+            && !maze.get(playerRowIndex).get(playerColIndex + 1).equals("#");
       case "U":
-        return playerRowIndex > 0;
+        return playerRowIndex - 1 > 0 && playerRowIndex - 1 < maze.size() - 1
+            && !maze.get(playerRowIndex - 1).get(playerColIndex).equals("#");
       case "D":
-        return playerRowIndex < maze.get(0).size() - 1;
+        return playerRowIndex + 1 > 0 && playerRowIndex + 1 < maze.size() - 1
+            && !maze.get(playerRowIndex + 1).get(playerColIndex).equals("#");
     }
     return true;
   }
