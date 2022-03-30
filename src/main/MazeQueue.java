@@ -12,16 +12,16 @@ public class MazeQueue extends Maze {
   public void move(String direction) {
     switch (direction) {
       case "L":
-        System.out.println("Can move left");
+        playerRowIndex--;
         break;
       case "R":
-        System.out.println("Can move right");
+        playerRowIndex++;
         break;
       case "U":
-        System.out.println("Can move up");
+        playerColIndex--;
         break;
       case "D":
-        System.out.println("Can move down");
+        playerColIndex++;
         break;
     }
   }
