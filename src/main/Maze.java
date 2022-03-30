@@ -61,10 +61,6 @@ public class Maze {
     scanner.close();
   }
 
-  public boolean exitFound() {
-    return maze.get(playerRowIndex).get(playerColIndex).equals(EXIT);
-  }
-
   public void move(String direction) {
     switch (direction) {
       case "L":
@@ -98,6 +94,10 @@ public class Maze {
             && !maze.get(playerRowIndex + 1).get(playerColIndex).equals(WALL);
     }
     return false;
+  }
+
+  public boolean exitFound() {
+    return maze.get(playerRowIndex).get(playerColIndex).equals(EXIT);
   }
 
   public int solve() {
