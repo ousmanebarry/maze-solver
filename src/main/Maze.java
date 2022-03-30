@@ -91,7 +91,7 @@ public class Maze {
         return playerRowIndex + 1 > 0 && playerRowIndex + 1 < maze.size() - 1
             && !maze.get(playerRowIndex + 1).get(playerColIndex).equals("#");
     }
-    return true;
+    return false;
   }
 
   public String getSolvedPath() {
