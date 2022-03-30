@@ -62,16 +62,16 @@ public class Maze {
   public void move(String direction) {
     switch (direction) {
       case "L":
-        playerRowIndex--;
-        break;
-      case "R":
-        playerRowIndex++;
-        break;
-      case "U":
         playerColIndex--;
         break;
-      case "D":
+      case "R":
         playerColIndex++;
+        break;
+      case "U":
+        playerRowIndex--;
+        break;
+      case "D":
+        playerRowIndex++;
         break;
     }
   }
