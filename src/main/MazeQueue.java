@@ -24,5 +24,4 @@ public class MazeQueue extends Maze {
 
     return (int) (end - start);
   }
-
 }

@@ -10,9 +10,9 @@ public class Solver {
     }
 
     try {
-      MazeQueue mazeSolver = new MazeQueue(args[0]);
+      Maze mazeSolver = new MazeQueue(args[0]);
       int runTime = mazeSolver.solve();
-      System.out.println(mazeSolver.getSolvedPath());
+      // System.out.println(mazeSolver.getSolvedPath());
       System.out.println("Run time : " + runTime + " ms");
 
     } catch (FileNotFoundException e) {

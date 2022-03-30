@@ -8,16 +8,18 @@ import java.io.FileNotFoundException;
 import java.lang.IllegalStateException;
 
 public class Maze {
-  protected static final String ENTRANCE_STRING = "E";
-  protected static final String EXIT_STRING = "X";
-  protected List<List<String>> solvedMaze;
-  protected List<List<String>> maze;
-  protected int entranceColIndex = -1;
-  protected int exitColIndex = -1;
-  protected int entranceRowIndex;
-  protected int exitRowIndex;
-  protected int playerRowIndex;
-  protected int playerColIndex;
+  public static final String ENTRANCE = "E";
+  public static final String EXIT = "X";
+  public static final String WALL = "#";
+  public static final String PATH = " ";
+  public List<List<String>> solvedMaze;
+  public List<List<String>> maze;
+  public int entranceColIndex = -1;
+  public int exitColIndex = -1;
+  public int entranceRowIndex;
+  public int exitRowIndex;
+  public int playerRowIndex;
+  public int playerColIndex;
 
   public Maze(String fileName) throws FileNotFoundException, IllegalStateException {
     File file = new File("mazes/" + fileName + ".txt");
@@ -45,9 +47,9 @@ public class Maze {
 
       for (String currentString : arrayCurrentLine) {
         listCurrentLine.add(currentString);
-        if (currentString.equals(ENTRANCE_STRING)) {
+        if (currentString.equals(ENTRANCE)) {
           entranceColIndex = counter;
-        } else if (currentString.equals(EXIT_STRING)) {
+        } else if (currentString.equals(EXIT)) {
           exitColIndex = counter;
         }
         counter++;
@@ -60,7 +62,7 @@ public class Maze {
   }
 
   public boolean exitFound() {
-    return maze.get(playerRowIndex).get(playerColIndex).equals(EXIT_STRING);
+    return maze.get(playerRowIndex).get(playerColIndex).equals(EXIT);
   }
 
   public void move(String direction) {
@@ -84,18 +86,22 @@ public class Maze {
     switch (direction) {
       case "L":
         return playerColIndex - 1 > 0 && playerColIndex - 1 < maze.get(playerRowIndex).size() - 1
-            && !maze.get(playerRowIndex).get(playerColIndex - 1).equals("#");
+            && !maze.get(playerRowIndex).get(playerColIndex - 1).equals(WALL);
       case "R":
         return playerColIndex + 1 > 0 && playerColIndex + 1 < maze.get(playerRowIndex).size() - 1
-            && !maze.get(playerRowIndex).get(playerColIndex + 1).equals("#");
+            && !maze.get(playerRowIndex).get(playerColIndex + 1).equals(WALL);
       case "U":
         return playerRowIndex - 1 > 0 && playerRowIndex - 1 < maze.size() - 1
-            && !maze.get(playerRowIndex - 1).get(playerColIndex).equals("#");
+            && !maze.get(playerRowIndex - 1).get(playerColIndex).equals(WALL);
       case "D":
         return playerRowIndex + 1 > 0 && playerRowIndex + 1 < maze.size() - 1
-            && !maze.get(playerRowIndex + 1).get(playerColIndex).equals("#");
+            && !maze.get(playerRowIndex + 1).get(playerColIndex).equals(WALL);
     }
     return false;
+  }
+
+  public int solve() {
+    throw new UnsupportedOperationException("Not implemented yet");
   }
 
   public String getSolvedPath() {
