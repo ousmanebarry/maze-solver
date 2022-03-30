@@ -9,37 +9,15 @@ public class MazeQueue extends Maze {
     super(fileName);
   }
 
-  public void move(String direction) {
-    switch (direction) {
-      case "L":
-        playerRowIndex--;
-        break;
-      case "R":
-        playerRowIndex++;
-        break;
-      case "U":
-        playerColIndex--;
-        break;
-      case "D":
-        playerColIndex++;
-        break;
-    }
-  }
-
-  public boolean canMove(String direction) {
-
-    return true;
-  }
-
   public int solve() {
     long start, end;
 
     start = System.currentTimeMillis();
 
-    // System.out.println("Entrance : 0," + entranceRowIndex);
-    // System.out.println(maze.get(entranceColIndex).get(entranceRowIndex));
-    // System.out.println("Exit : " + (exitColIndex) + "," + exitRowIndex);
-    // System.out.println(maze.get(exitColIndex).get(exitRowIndex));
+    System.out.println("Entrance : 0," + entranceColIndex);
+    System.out.println(maze.get(entranceRowIndex).get(entranceColIndex));
+    System.out.println("Exit : " + (exitRowIndex) + "," + exitColIndex);
+    System.out.println(maze.get(exitRowIndex).get(exitColIndex));
 
     // System.out.println(maze);
 

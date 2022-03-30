@@ -12,10 +12,10 @@ public class Maze {
   protected static final String EXIT_STRING = "X";
   protected List<List<String>> solvedMaze;
   protected List<List<String>> maze;
-  protected int entranceRowIndex = -1;
-  protected int entranceColIndex;
-  protected int exitRowIndex = -1;
-  protected int exitColIndex;
+  protected int entranceRowIndex;
+  protected int entranceColIndex = -1;
+  protected int exitRowIndex;
+  protected int exitColIndex = -1;
   protected int playerRowIndex;
   protected int playerColIndex;
 
@@ -25,12 +25,12 @@ public class Maze {
     maze = new ArrayList<>();
     solvedMaze = new ArrayList<>();
     initialize(scanner);
-    entranceColIndex = 0;
-    exitColIndex = maze.size() - 1;
+    entranceRowIndex = 0;
+    exitRowIndex = maze.size() - 1;
     playerRowIndex = entranceRowIndex;
     playerColIndex = entranceColIndex;
 
-    if (entranceRowIndex == -1 || exitRowIndex == -1) {
+    if (entranceColIndex == -1 || exitColIndex == -1) {
       throw new IllegalStateException("The maze must have an entrance (E) and an exit (X)");
     }
   }
@@ -46,9 +46,9 @@ public class Maze {
       for (String currentString : arrayCurrentLine) {
         listCurrentLine.add(currentString);
         if (currentString.equals(ENTRANCE_STRING)) {
-          entranceRowIndex = counter;
+          entranceColIndex = counter;
         } else if (currentString.equals(EXIT_STRING)) {
-          exitRowIndex = counter;
+          exitColIndex = counter;
         }
         counter++;
       }
@@ -57,6 +57,37 @@ public class Maze {
     }
 
     scanner.close();
+  }
+
+  public void move(String direction) {
+    switch (direction) {
+      case "L":
+        playerRowIndex--;
+        break;
+      case "R":
+        playerRowIndex++;
+        break;
+      case "U":
+        playerColIndex--;
+        break;
+      case "D":
+        playerColIndex++;
+        break;
+    }
+  }
+
+  public boolean canMove(String direction) {
+    switch (direction) {
+      case "L":
+        return playerColIndex > 0 && !maze.get(playerColIndex - 1).get(playerRowIndex).equals("#");
+      case "R":
+        return playerColIndex < maze.size() - 1;
+      case "U":
+        return playerRowIndex > 0;
+      case "D":
+        return playerRowIndex < maze.get(0).size() - 1;
+    }
+    return true;
   }
 
   public String getSolvedPath() {
