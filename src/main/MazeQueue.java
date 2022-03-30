@@ -23,12 +23,18 @@ public class MazeQueue extends Maze {
     Queue<String> q = new LinkedList<String>();
     q.add("");
     // q.peek() != "URDRRR"
-    while (counter < 4) {
+    while (!q.isEmpty()) {
       String s = q.remove();
-      q.add(s + "L");
-      q.add(s + "R");
-      q.add(s + "U");
-      q.add(s + "D");
+      if (canMove(s)) {
+        if (exitFound()) {
+          System.out.println(s);
+        } else {
+          q.add(s + "L");
+          q.add(s + "R");
+          q.add(s + "U");
+          q.add(s + "D");
+        }
+      }
       System.out.println(q);
       counter++;
     }
