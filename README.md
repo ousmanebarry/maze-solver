@@ -54,4 +54,4 @@ This project is licensed under the [MIT](/LICENSE) license.
 - [Maze-solving algorithms](https://en.wikipedia.org/wiki/Maze-solving_algorithm)
 - [Random maze generator](https://thenerdshow.com/amaze.html)
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
+![issue video](https://cdn.discordapp.com/attachments/439833184260063233/958864694435786752/2022-03-30_19-02-48.mp4)
