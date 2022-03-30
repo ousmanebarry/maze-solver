@@ -20,7 +20,8 @@ public class Maze {
   public Maze(String fileName) throws FileNotFoundException, IllegalStateException {
     File file = new File("mazes/" + fileName + ".txt");
     Scanner scanner = new Scanner(file);
-    maze = solvedMaze = new ArrayList<>();
+    maze = new ArrayList<>();
+    solvedMaze = new ArrayList<>();
     initialize(scanner);
     entranceColIndex = 0;
     exitColIndex = maze.size() - 1;
@@ -47,7 +48,6 @@ public class Maze {
         }
         counter++;
       }
-
       maze.add(listCurrentLine);
       solvedMaze.add(listCurrentLine);
     }
@@ -55,7 +55,16 @@ public class Maze {
     scanner.close();
   }
 
-  public List<List<String>> getSolvedPath() {
-    return solvedMaze;
+  public String getSolvedPath() {
+    String solvedPath = "";
+
+    for (List<String> currentLine : solvedMaze) {
+      for (String currentString : currentLine) {
+        solvedPath += currentString;
+      }
+      solvedPath += "\n";
+    }
+
+    return solvedPath;
   }
 }

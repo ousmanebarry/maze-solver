@@ -9,7 +9,7 @@ public class MazeQueue extends Maze {
     super(fileName);
   }
 
-  public boolean canMove(char direction) {
+  public boolean canMove(String direction) {
     return true;
   }
 
@@ -23,7 +23,7 @@ public class MazeQueue extends Maze {
     // System.out.println("Exit : " + (exitColIndex) + "," + exitRowIndex);
     // System.out.println(maze.get(exitColIndex).get(exitRowIndex));
 
-    System.out.println(maze);
+    // System.out.println(maze);
 
     end = System.currentTimeMillis();
 
