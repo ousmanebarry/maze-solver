@@ -13,9 +13,11 @@ public class Maze {
   protected List<List<String>> solvedMaze;
   protected List<List<String>> maze;
   protected int entranceRowIndex = -1;
-  protected int exitRowIndex = -1;
   protected int entranceColIndex;
+  protected int exitRowIndex = -1;
   protected int exitColIndex;
+  protected int playerRowIndex;
+  protected int playerColIndex;
 
   public Maze(String fileName) throws FileNotFoundException, IllegalStateException {
     File file = new File("mazes/" + fileName + ".txt");
@@ -25,6 +27,8 @@ public class Maze {
     initialize(scanner);
     entranceColIndex = 0;
     exitColIndex = maze.size() - 1;
+    playerRowIndex = entranceRowIndex;
+    playerColIndex = entranceColIndex;
 
     if (entranceRowIndex == -1 || exitRowIndex == -1) {
       throw new IllegalStateException("The maze must have an entrance (E) and an exit (X)");

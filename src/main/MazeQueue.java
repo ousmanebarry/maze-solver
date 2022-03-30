@@ -9,7 +9,25 @@ public class MazeQueue extends Maze {
     super(fileName);
   }
 
+  public void move(String direction) {
+    switch (direction) {
+      case "L":
+        System.out.println("Can move left");
+        break;
+      case "R":
+        System.out.println("Can move right");
+        break;
+      case "U":
+        System.out.println("Can move up");
+        break;
+      case "D":
+        System.out.println("Can move down");
+        break;
+    }
+  }
+
   public boolean canMove(String direction) {
+
     return true;
   }
 
