@@ -12,10 +12,10 @@ public class Maze {
   protected static final String EXIT_STRING = "X";
   protected List<List<String>> solvedMaze;
   protected List<List<String>> maze;
-  protected int entranceRowIndex;
   protected int entranceColIndex = -1;
-  protected int exitRowIndex;
   protected int exitColIndex = -1;
+  protected int entranceRowIndex;
+  protected int exitRowIndex;
   protected int playerRowIndex;
   protected int playerColIndex;
 
@@ -57,6 +57,10 @@ public class Maze {
     }
 
     scanner.close();
+  }
+
+  public boolean exitFound() {
+    return maze.get(playerRowIndex).get(playerColIndex).equals(EXIT_STRING);
   }
 
   public void move(String direction) {

@@ -14,11 +14,11 @@ public class MazeQueue extends Maze {
 
     start = System.currentTimeMillis();
 
-    System.out.println("Entrance : 0," + entranceColIndex);
-    System.out.println(maze.get(entranceRowIndex).get(entranceColIndex));
-    System.out.println("Exit : " + (exitRowIndex) + "," + exitColIndex);
-    System.out.println(maze.get(exitRowIndex).get(exitColIndex));
-    System.out.println("Player : " + playerRowIndex + "," + playerColIndex);
+    // System.out.println("Entrance : 0," + entranceColIndex);
+    // System.out.println(maze.get(entranceRowIndex).get(entranceColIndex));
+    // System.out.println("Exit : " + (exitRowIndex) + "," + exitColIndex);
+    // System.out.println(maze.get(exitRowIndex).get(exitColIndex));
+    // System.out.println("Player : " + playerRowIndex + "," + playerColIndex);
 
     end = System.currentTimeMillis();
 
