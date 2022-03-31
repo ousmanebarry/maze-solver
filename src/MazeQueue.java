@@ -1,5 +1,3 @@
-package main;
-
 import java.util.Queue;
 import java.util.LinkedList;
 import java.io.FileNotFoundException;
@@ -22,28 +20,15 @@ public class MazeQueue extends Maze {
     int counter = 0;
     Queue<String> q = new LinkedList<String>();
     q.add("");
-    // q.peek() != "URDRRR"
-    while (!q.isEmpty()) {
+    while (counter < 10) {
       String s = q.remove();
-      if (canMove(s)) {
-        if (exitFound()) {
-          System.out.println(s);
-        } else {
-          q.add(s + "L");
-          q.add(s + "R");
-          q.add(s + "U");
-          q.add(s + "D");
-        }
-      }
+      q.add(s + "L");
+      q.add(s + "R");
+      q.add(s + "U");
+      q.add(s + "D");
       System.out.println(q);
       counter++;
     }
-
-    // System.out.println("Entrance : 0," + entranceColIndex);
-    // System.out.println(maze.get(entranceRowIndex).get(entranceColIndex));
-    // System.out.println("Exit : " + (exitRowIndex) + "," + exitColIndex);
-    // System.out.println(maze.get(exitRowIndex).get(exitColIndex));
-    // System.out.println("Player : " + playerRowIndex + "," + playerColIndex);
 
     end = System.currentTimeMillis();
 

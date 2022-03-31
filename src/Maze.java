@@ -1,5 +1,3 @@
-package main;
-
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
@@ -12,20 +10,18 @@ public class Maze {
   public static final String EXIT = "X";
   public static final String WALL = "#";
   public static final String PATH = " ";
-  public List<List<String>> solvedMaze;
-  public List<List<String>> maze;
-  public int entranceColIndex = -1;
-  public int exitColIndex = -1;
-  public int entranceRowIndex;
-  public int exitRowIndex;
-  public int playerRowIndex;
-  public int playerColIndex;
+  public List<List<String>> solvedMaze, maze;
+  public int entranceColIndex, exitColIndex;
+  public int entranceRowIndex, exitRowIndex;
+  public int playerRowIndex, playerColIndex;
 
   public Maze(String fileName) throws FileNotFoundException, IllegalStateException {
     File file = new File("mazes/" + fileName + ".txt");
     Scanner scanner = new Scanner(file);
     maze = new ArrayList<>();
     solvedMaze = new ArrayList<>();
+    entranceColIndex = -1;
+    exitColIndex = -1;
     initialize(scanner);
     entranceRowIndex = 0;
     exitRowIndex = maze.size() - 1;
